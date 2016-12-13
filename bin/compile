@@ -16,8 +16,8 @@ LEPTONICA_FILE=leptonica-1.72.tar.gz
 LEPTONICA_TEMP_DIR=leptonica-1.72
 LEPTONICA_INSTALL_DIR=$BUILD_DIR/leptonica
 
-TESSERACT_URL=https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.02.tar.gz
-TESSERACT_FILE=tesseract-ocr-3.02.02.tar.gz
+TESSERACT_URL=https://github.com/tesseract-ocr/tesseract/archive/3.02.02.zip
+TESSERACT_FILE=3.02.02.zip
 TESSERACT_TEMP_DIR=tesseract-ocr
 TESSERACT_INSTALL_DIR=$BUILD_DIR/tesseract
 
@@ -25,7 +25,7 @@ TESSERACT_ENVSCRIPT=$TESSERACT_INSTALL_DIR/tesseract-ocr.sh
 
 TESSERACT_TRAINNING_DATA=$TESSERACT_INSTALL_DIR/share/tessdata
 TESSERACT_DATA_TMP_DIR=$INSTALL_TEMP_DIR/tessdata
-TESSERACT_DATA_ENG=https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz
+#TESSERACT_DATA_ENG=https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz
 TESSERACT_DATA_VERSION=3.02
 TESSERACT_DATA_LANG=POR,ESP,JNP
 TESSERACT_DATA_URL_BASE=https://tesseract-ocr.googlecode.com/files/tesseract-ocr-
@@ -84,24 +84,24 @@ mkdir -p $TESSERACT_DATA_TMP_DIR
 
 cd $TESSERACT_DATA_TMP_DIR
 
-#Download ENG lang (Default Tessaract Language)
-echo 'Getting tesseract-ocr training data'
-echo 'English training data'
-curl -0 $TESSERACT_DATA_ENG | tar -xz 
+# #Download ENG lang (Default Tessaract Language)
+# echo 'Getting tesseract-ocr training data'
+# echo 'English training data'
+# curl -0 $TESSERACT_DATA_ENG | tar -xz 
 
-#Download other data lang
-if [ $TESSERACT_LANG_DATA ]
-then
-   array=(${TESSERACT_LANG_DATA//,/ })
-   for i in "${!array[@]}"
-   do
-     lang="${array[i]}"
-     echo $lang 'training data - ' $TESSERACT_DATA_URL_BASE-$TESSERACT_DATA_VERSION.$lang.tar.gz
+# #Download other data lang
+# if [ $TESSERACT_LANG_DATA ]
+# then
+#    array=(${TESSERACT_LANG_DATA//,/ })
+#    for i in "${!array[@]}"
+#    do
+#      lang="${array[i]}"
+#      echo $lang 'training data - ' $TESSERACT_DATA_URL_BASE-$TESSERACT_DATA_VERSION.$lang.tar.gz
 
-     curl -0 $TESSERACT_DATA_URL_BASE-$TESSERACT_DATA_VERSION.$lang.tar.gz | tar -xz
+#      curl -0 $TESSERACT_DATA_URL_BASE-$TESSERACT_DATA_VERSION.$lang.tar.gz | tar -xz
 
-   done
-fi
+#    done
+# fi
 
 
 #Copy all file for data folder

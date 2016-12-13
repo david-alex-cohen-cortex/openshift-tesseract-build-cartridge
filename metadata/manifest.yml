@@ -1,10 +1,10 @@
 Name: tesseract-build
 Cartridge-Short-Name: TESSERACT
 Display-Name: "Tesseract 3.02.02"
-Version: "1.0"
+Version: "1.1"
 Website: https://github.com/david-alex-cohen-cortex/openshift-tesseract-build-cartridge
-Source-Url: https://github.com/david-alex-cohen-cortex/openshift-tesseract-build-cartridge/archive/1.0.zip
-Cartridge-Version: 0.1.0
+Source-Url: https://github.com/david-alex-cohen-cortex/openshift-tesseract-build-cartridge/archive/1.1.zip
+Cartridge-Version: 0.1.1
 Cartridge-Vendor: villarcorp
 Categories:
   - service
